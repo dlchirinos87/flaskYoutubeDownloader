@@ -1,0 +1,46 @@
+{% extends 'index.html' %}
+
+
+{% block body %} 
+
+<div class="d-flex justify-content-center mt-2">
+    {% with messages = get_flashed_messages() %}
+      {% if messages %}
+        {% for message in messages %}
+            {% if msg==1 %}
+                <div class="text-center text-wrap text-danger bg-danger mt-3 w-25 rounded-pill" style="--bs-bg-opacity: .3;">
+                {{message}}
+                </div>
+            {% elif msg==2 %}
+                <div class="text-center text-wrap text-info bg-info mt-3 w-25 rounded-pill" style="--bs-bg-opacity: .3;">
+                {{message}}
+                </div>
+            {% elif msg==3 %}
+                <div class="text-center text-wrap text-success bg-success mt-3 w-25 rounded-pill" style="--bs-bg-opacity: .3;">
+                {{message}}
+                </div>
+            {% endif %}
+        {% endfor %}
+      {% endif %}
+    {% endwith %} 
+  </div>  
+
+{% if msg==2 or enablejs %}
+<div class="text-center mt-2">
+    <h4 class="">{{title}}</h4>
+    <img src="{{image}}" alt="" class="img-thumbnail mt-1">
+</div>
+<div class="d-flex justify-content-center mt-2">
+    <button type="button" class="btn btn-success mt-3 p-2 rounded-pill" type="button" onclick= "window.location.href='{{url_for('sucessPage')}}'"  value="Download" >Download</button>
+</div>
+{% endif %} 
+
+
+{% if enablejs %}
+    <SCRIPT>
+        window.location.href ='{{url_for('serveFile')}}';
+    </SCRIPT>
+{% endif %}
+
+{% endblock %} 
+

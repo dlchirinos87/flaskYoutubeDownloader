@@ -1,0 +1,20 @@
+{% extends 'base.html'%}
+
+{% block title %} Home {% endblock %}
+
+{% block content %} 
+
+<div class="text-center mt-5">
+    <form name="form1 "action="{{url_for('downloadPage')}}" method="POST" enctype="multipart/form-data">
+        <textarea class="textbox w-50 mt-4 p-1 rounded-pill" name="link" style="resize: none" cols="30" rows="1" placeholder="Enter YouTube video url">{{link}}</textarea><br>
+        <input type="submit" class="btn btn-danger w-auto mt-4 p-2 rounded-pill" name="submit">
+    </form>
+</div> 
+
+
+{% block body %} 
+
+
+{% endblock %} 
+
+{% endblock %} 
