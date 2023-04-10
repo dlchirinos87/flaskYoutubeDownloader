@@ -1,3 +1,3 @@
 # Youtube Downloader
-An app created using the Flask framework that downloads Youtube videos when a url is provided. 
+A  webapp created using the Python Flask framework. it downloads Youtube videos locally when a url is provided. 
 
